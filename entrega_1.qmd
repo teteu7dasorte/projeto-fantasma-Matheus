@@ -1,6 +1,6 @@
 ---
 # Nome do arquivo PDF gerado na pasta resultado
-output-file: "Entrega 1 - Gustavo"
+output-file: "Entrega 1"
 ---
 
 ```{r setup}
@@ -8,18 +8,100 @@ output-file: "Entrega 1 - Gustavo"
 source("rdocs/entrega_1.R")
 ```
 
+
+# Objetivo
+O presente projeto tem como objetivo gerar uma série de análises estatísticas 
+para o cliente João Sábio, dono da Old Town Road.Ltda, para se obter uma melhor
+compreensão do mercado de comércio no faroeste que ele planeja investir. Para 
+que tal objetivo seja alcançado serão feitas análises descritivas e exploratórias
+para entender o perfil do João Sábio e de suas vendas, haverão também análises
+bivariadas e de correlação para identifcar as receitas.
+
+O banco de dados foi fornecido inteiramente pelo cliente e compreende um período
+de transações de 1880 a 1889. A amostra, caracterizada como um censo de todas as
+transações registradas pela holding, contém variáveis de vendas, clientes, lojas,
+funcionários e produtos.
+
+ Para a organização, manipulação e análises dos dados, gráficos e tabelas deste
+relátorio foram feitas no software do R, e os pacotes que foram utilizados para 
+este trabalho foram o tidyverse (mais utilizados foram o dplyr e o ggplot),
+lubridate e readxl.
+
+
+
 # Análises
 
-## Análise tal
+## Análise 1
+Esta primeira análise focará na evolução temporal e no desempenho financeiro
+geral da Old Town Road.Ltda, com base em $\ref{fig-g1}$. 
+As variáveis que compõem esta primeira análise são os Anos, uma variável 
+quantitativa discreta, representando o ano de transação, 
+com uma variação de 1880 a 1889, e a receita média, quantitativa contínua, 
+representando o valor médio, em reais.
 
-Introdução da análise
+## Análise 2
+ Esta segunda etapa foca na análise de evolução da receita média das lojas ao 
+longo dos anos de 1880 a 1889 é fundamental para avaliarmos o desempenho 
+financeiro da holding ao londo do tempo.
+ Avaliando o Gráfico, g1, percebe-se que a receita média por transação apresenta
+crescemiento e recuperação entre a década. O valor de uma transação média se 
+inicia aproximadamente R$ 40,00 e atingiu seu pico máximo em 1889, chegando aos 
+R$ 70,00 , sugerindo um aumento no valor agregado de cada venda.
+  Ao apurar o comportamento da receita média ao decorrer de cada ano, observa-se 
+que o ponto mais baixo da década foi registrado em 1882, quando a receita média 
+caiu para R$ 30,00. Em comparação houve uma rápida recuperação a partid do ano 
+em 1883, que levou o valor para R$ 60,00 em 1884. Nos próximos anos é possivel 
+ver o crescimento se estabilizando entre 1886 e 1888 e atingindo seu máximo em 
+1889, como é visto em $\ref{fig-g1}$
+
+## Conclusão:
+
+Por fim, pode-se concluir que as estratégia financeiras e comerciais da Old Town 
+Road.Ltda tem se mostrada eficazes em agregar valor as suas transações ao longo 
+da década de 1880. A tendência ascendente observada no aumento na receita média 
+por venda é um forte indicador de sucesso, confirmando a capacidade de expansão 
+e consolidação no mercado, 
 
 ```{r}
 #| label: fig-g1
-#| fig-cap: "Gráfico de barras teste "
+#| fig-cap: "Gráfico "
 g1
+
 ```
 
-descritiva $\ref{fig-g1}$ volta pra figura
+
+::: {#quad- layout-align="center" quad-pos="H"}
+```{=latex}
+
+
+
+```
+
+Medidas resumo da 
+:::
+
+
+
+::: {#tbl-modalidades layout-align="center" tbl-pos="H"}
+```{=latex}
+
+
+```
+
+
+:::
+
+
+
+
+$\ref{fig-g1}$
+
+[@tbl-]
+
+
+[**Quadro** @quad-]
+
+
+
 
 
