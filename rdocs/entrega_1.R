@@ -1,4 +1,4 @@
-source("rdocs/source/packages.R")
+source("source/packages.R", local = TRUE)
 
 # ---------------------------------------------------------------------------- #
 
@@ -26,6 +26,19 @@ source("rdocs/source/packages.R")
 ##Análise 1
 #carregando padrões da ESTAT:
 
+source("source/packages.R", local = TRUE)
+source("source/padronizacao_graficos.R", local = TRUE)
+
+
+
+
+
+
+library(readxl)
+library(dplyr)
+library(ggplot2)
+library(lubridate)
+
 #Carregando os dados: 
 
 vendas <- read_excel("relatorio_old_town_road.xlsx" , sheet =  "relatorio_vendas")
@@ -48,7 +61,7 @@ dados_completos <- vendas %>%
   left_join(lojas, by = "StoreID")%>%
   mutate(
     Date = as.Date(Date),
-    Ano = as.integer(year(Date)),
+    Ano = as.integer(format("Date","%Y")),
     Receita = Quantity * UnityPrice / cotacao
   )
   
@@ -70,15 +83,13 @@ print(Receita)
 # Gráfico:
 
  g1 <- ggplot(Receita,aes(x = Ano, y = receita_media)) +
-   geom_line(size = 1, colour = "#A11D21") +
-   geom_point(size = 2, colour = "#A11D21")+
-   scale_x_continuous(limits = c(1880,1889),
-                      breaks = 1880:1889)+
-   labs(
-     title = "Receita Média das Lojas (1880-1889)",
-     x= "Ano",
-     y= "Receita Média(R$)"
-     ) +
+  geom_line(size = 1) +
+  geom_point(size = 2)+
+    labs(
+      title = "Receita Média das Lojas (1880-1889)",
+      x= "Ano",
+      y= "Receita Média(R$)"
+      ) +
    theme_estat()
 ggsave("receita_media_anual.png", plot = g1 , width = 8, height = 6)
 print(g1)

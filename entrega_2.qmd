@@ -9,34 +9,31 @@ source("rdocs/entrega_2.R")
 ```
 
 
-```{r}
-# Rodar apenas uma vez na vida!
-## Instalando o tinytex(pacote apenas)
-### CRAN version
-install.packages('tinytex')
-
-
-## Baixando o tinytex
-library(tinytex)
-tinytex::install_tinytex()
-```
-
 # Objetivo
 
-Esse template foi criado para o alocado conseguir observar como ficaria sua análise o arquivo principal. É daqui que o gerente de projetos irá copiar a análise e inserir no documento principal que gerará o relatório estatístico.
+O objetivo desta análise é investigar a relação linear entre as variáveis Peso e altura dos clientes cadastrados. Para que tal análise seja possível, serão utilizadas as variáveis quantitativas:
+-Peso(kg): Weight_lbs (peso em libras), transformado para quilogramas (Weight_kg) pela multiplicação de 0,45359237.
+-Altura(cm): Height_dm (altura em decímetros), transformado para centímetros (Height_cm) pela multiplicação por 10.
+  A base dos dados tem uma amostra com 1.900 clientes únicos avaliados. A relação entre essas duas variáveis é visualizada por meio de um Gráfico de Dispersão com a linha de regressão, conforme $\ref{fig-g2}$.
 
 # Análises
 
-## Análise 3
+## Análise dos resultados e visualização:
+  A $\ref{fig-g2}$ mostra uma tendência linear e positiva entre o peso e a altura , o que sugere que o aumento de uma variável também demonstra o crescimento da outra.
+  Para quantificar a força dessa associação, o coeficiente de pearson (r) foi calculado entre o Peso e Altura:
+    -Coeficiente de Correlação(r) = 0,70
+  Este valor r, nos indica que a associação entre estas variáveis é forte.
 
-## Análise 4
-
+  A relação entre peso e altura foi modelada por meio de uma Regressão linear Simples para que seja possível estimar o crescimento da altura em função do peso.
+  A equação modelo ajustada é: 
+  - Altura (cm)= 128,08 + 0,58 x Peso(kg)
+O coeficiente de 0,58 quantifica o crescimento: para cada 1 kg de peso do cliente, sua altura média prevista aumenta 0,58 cm.
+ O coeficiente de determinação (R²) de 0,486 nos informa que 48,6% da variação na altura dos clientes é explicada pelo seu peso. Isso informa que o modelo é bom, embora 51,4% da variância também tragam resultados significativos na altura.
+  
 ```{r}
-#| label: fig-
+#| label: fig-g2
 #| fig-cap: "Gráfico "
-
-
-
+g2
 ```
 
 
